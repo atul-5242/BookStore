@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Upload Notes</title>
+	<link rel="stylesheet" href="path/to/bootstrap.min.css">
+	<link rel="stylesheet" href="path/to/custom.css">
+	<link rel="stylesheet" href="/static/file_pages/SubmitFile.css">
+	<script src="path/to/bootstrap.min.js"></script>
+	<script src="path/to/jquery.min.js"></script>
+</head>
+<body>
+
+	 <!--===== HEADER =====-->
+<header class="l-header">
+    <nav class="nav bd-grid">
+        <div>
+            <a href="/" class="nav__logo" style="color:white;">GEHU</a>
+        </div>
+
+        <div class="nav__menu" id="nav-menu">
+            <ul class="nav__list">
+                <li class="nav__item"><a href="/" class="nav__link">Home</a></li>
+                <li class="nav__item"><a href=" {% url 'file_home' %} " class="nav__link">Back to Notes</a></li>
+            </ul>
+        </div>
+
+        <div class="nav__toggle" id="nav-toggle">
+            <i class='bx bx-menu'></i>
+        </div>
+    </nav>
+</header>
+	<!-- Include the user navigation HTML content here -->
+
+	<script>
+		// Display success message and redirect to the view_mynotes page
+		function showSuccessMessage() {
+			alert('Notes Uploaded Successfully');
+			window.location = "path/to/view_mynotes";
+		}
+
+		// Display error message
+		function showErrorMessage() {
+			alert('Something went wrong, Try Again');
+		}
+	</script>
+<br><br><br><br><br><br>
+	<div class="container card shadow mt-5">
+		<div class="card-body">
+			<h2 class="text-center text-danger">Upload Notes</h2>
+			<hr>
+			<div class="row">
+				<div class="col-sm-6">
+					<div class="image-container">
+						<img src="https://image.freepik.com/vector-gratis/personas-que-leen-libros-estudiar-ilustracion-vectorial_74855-4807.jpg" alt="Book lover-bro" class="mt-3">
+					</div>
+				</div>
+				<div class="col-sm-6">
+					<form action="{% url 'file_upload' %}"method="post" enctype="multipart/form-data">
+						{% csrf_token %}
+						<label>Branch</label>
+						<select class="form-control" name="branch" id="branch">
+							<option value="">--- Select Branch ---</option>
+							<option value="Computer Science">Computer Science</option>
+							<option value="Mechanical">Mechanical</option>
+							<option value="Civil">Civil</option>
+							<option value="Electronics">Electronics</option>
+							<option value="Electric">Electric</option>
+							<option value="IT">IT</option>
+						</select>
+						<br>
+						<label>Subject</label>
+						<input type="text" class="form-control" placeholder="Enter Subject" name="subject" id="subject">
+						<br>
+						<label>Notes File</label>
+						<input type="file" name="notesfile" id="notesfile"class="form-control">
+						<br>
+						<label>File Type</label>
+						<select class="form-control" name="filetype" id="filetype">
+							<option value="PDF">--- Select File ---</option>
+							<option value="PDF">PDF</option>
+							<option value="PPT">PPT</option>
+							<option value="DOC/DOCX">DOC/DOCX</option>
+							<option value="TXT">TXT</option>
+							<option value="Image">Image</option>
+							<option value="ZIP/RAR">ZIP/RAR</option>
+						</select>
+						<br>
+						<label>Description</label>
+						<br>
+						<textarea class="form-control" rows="2"col="5" name="description" id="filetype"></textarea>
+						<br>
+						<input type="submit" class="btn btn-seconary mt-2" value="Submit" >
+					</form>
+				</div>
+			</div>
+		</div>
+	</div>
+</body>
+</html>

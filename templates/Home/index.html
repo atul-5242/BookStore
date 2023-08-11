@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="icon" href="https://images.static-collegedunia.com/public/college_data/images/logos/1483615540logoERA.png?tr=w-80,h-80,c-force" type="image/x-icon">
+        <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+        <link rel="stylesheet" href="static/Home/css/styles-home.css">
+
+        <!-- =====BOX ICONS===== -->
+        <link href='https://cdn.jsdelivr.net/npm/boxicons@2.0.5/css/boxicons.min.css' rel='stylesheet'>
+
+        <title>Portfolio website complete</title>
+    </head>
+    <body>
+        <!--===== HEADER =====-->
+        <header class="l-header">
+            <nav class="nav bd-grid">
+                <div>
+                    <a href="/" class="nav__logo">GEHU</a>
+                </div>
+
+                <div class="nav__menu" id="nav-menu">
+                    <ul class="nav__list">
+                        <li class="nav__item"><a href="#home" class="nav__link active">Home</a></li>
+                        <li class="nav__item"><a href="#about" class="nav__link">About</a></li>
+                        <!-- <li class="nav__item"><a href="#skills" class="nav__link">Sign-up</a></li> -->
+
+
+                        {% if user.is_authenticated %}
+
+                        <li class="nav__item"><a href="accounts/logout_user" class="nav__link">Logout</a></li>
+                        {% else %}
+                        <li class="nav__item"><a href="accounts/loginin" class="nav__link">Sign-in</a></li>
+                        
+                  
+                        {% endif %}
+                   
+                        <li class="nav__item"><a href="http://127.0.0.1:8000/admin/login/?next=/admin/" class="nav__link">Admin</a></li>
+                    </ul>
+                </div>
+
+                <div class="nav__toggle" id="nav-toggle">
+                    <i class='bx bx-menu'></i>
+                </div>
+            </nav>
+        </header>
+
+        <main class="l-main">
+            <!--===== HOME =====-->
+            <section class="home bd-grid" id="home">
+                <div class="home__data">
+                    <h1 class="home__title">The,<br>Prestigious <span class="home__title-color">GEHU</span><br>College in India.</h1>
+
+
+                        {% if user.is_authenticated %}
+
+                        <a href="files_/files_home" class="button">Go to Book Store</a>
+                        {% else %}
+                        <a href="accounts/loginin" class="button">Your Welcome...</a>
+                        {% endif %}
+                </div>
+
+                <div class="home__social">
+                    <a href="https://www.linkedin.com/school/graphic-era-official/?originalSubdomain=in" class="home__social-icon"><i class='bx bxl-linkedin'></i></a>
+                    <a href="https://geu.ac.in/" class="home__social-icon"><i class='bx bxl-google' ></i></a>
+                    <a href="https://twitter.com/i/flow/login?redirect_after_login=%2FGraphicEraUni" class="home__social-icon"><i class='bx bxl-twitter' ></i></a>
+                </div>
+
+                <div class="home__img">
+                    <svg class="home__blob" viewBox="70 -150 250 467" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                        <mask id="mask0" mask-type="alpha">
+                            <path d="M9.19024 145.964C34.0253 76.5814 114.865 54.7299 184.111 29.4823C245.804 6.98884 311.86 -14.9503 370.735 14.143C431.207 44.026 467.948 107.508 477.191 174.311C485.897 237.229 454.931 294.377 416.506 344.954C373.74 401.245 326.068 462.801 255.442 466.189C179.416 469.835 111.552 422.137 65.1576 361.805C17.4835 299.81 -17.1617 219.583 9.19024 145.964Z"/>
+                        </mask>
+                        <g mask="url(#mask0)">
+                            
+                            <image class="home__blob-img" x="107" y="60"  href="static/Home/img-home/geu-building.jpg"/>
+                        </g>
+                    </svg>
+                </div>
+            </section>
+
+            <!--===== ABOUT =====-->
+            <section class="about section " id="about">
+                <h2 class="section-title">About</h2>
+
+                <div class="about__container bd-grid">
+                    <div class="about__img">
+                        <img src="static/Home/img-home/geu-logo.jpg" alt="">
+                    </div>
+                    
+                    <div>
+                        <h2 class="about__subtitle">Proud To Be Graphian!</h2>
+                        <p class="about__text">
+                            Nestled amidst Uttarakhand's scenic mountains, Graphic Era University is a renowned institution known for its academic excellence, vibrant campus, and holistic approach to education. With passionate faculty and modern facilities, it fosters an environment that encourages critical thinking, creativity, and collaboration. Offering diverse courses and programs, the university empowers students to pursue their passions and provides ample opportunities for co-curricular engagement. With a global outlook and a commitment to excellence, Graphic Era University stands as a leading institution, shaping the future of its students.</p>           
+                    </div>                                   
+                </div>
+            </section>
+
+            <!--===== SKILLS =====-->
+            <section class="skills section" id="skills">
+                <h1 class="section-title">What Can you Do?</h1>
+
+                <div class="skills__container bd-grid">          
+                    <div>
+                        <h2 class="skills__subtitle">Documents For Share</h2>
+                        <p class="skills__text">Documents for Share is a user-friendly platform that simplifies document sharing and collaboration. It offers centralized file management, real-time collaborative editing, and robust security measures. With Documents for Share, you can streamline your workflow and easily share and collaborate on documents, saving time and improving productivity.</p>
+                        <div class="skills__data">
+                            <div class="skills__names">
+                                <!-- <i class='bx bxl-html5 skills__icon'></i>
+                                 -->
+                                 <i class="bx bxs-file-pdf skills__icon"></i>
+
+                                <span class="skills__name">PDF</span>
+                            </div>
+                            <div class="skills__bar skills__html">
+
+                            </div>
+                            
+                        </div>
+                        <div class="skills__data">
+                            <div class="skills__names">
+                                <img class="bx skills__icon" src="static/Home/img-home/ppt.png" alt="" height="8%"width="8%">
+                                <span class="skills__name">PPT</span>
+                            </div>
+                            <div class="skills__bar skills__css">
+                                
+                            </div>
+                            
+                        </div>
+                        <div class="skills__data">
+                            <div class="skills__names">
+                                <img class="bx skills__icon" src="static/Home/img-home/photo-view.png" alt="" height="8%"width="8%">
+                                <span class="skills__name">Image(JPG,PNG,JPEG)</span>
+                            </div>
+                            <div class="skills__bar skills__js">
+                                
+                            </div>
+                          
+                        </div>
+                        <div class="skills__data">
+                            <div class="skills__names">
+                                <img class="bx skills__icon" src="static/Home/img-home/exel.png" alt="" height="15%"width="15%">
+                                <span class="skills__name">MS EXCEL -> and Many More...</span>
+                            </div>
+                            <div class="skills__bar skills__ux">
+                                
+                            </div>
+                           
+                           
+                        </div>
+                        
+                    </div>
+                    
+                    <div>              
+                        <img src="static/Home/img-home/work3.jpg" alt="" class="skills__img">
+                    </div>
+                </div>
+            </section>
+
+            <!--===== WORK =====-->
+            <section class="work section" id="work">
+                <h2 class="section-title">Course</h2>
+
+                <div class="work__container bd-grid">
+                    <a href="" class="work__img">
+                        <img  style="margin-top: 13px;"src="static/Home/img-home/btech.jpg" alt="">
+                    </a>
+                    <a href="" class="work__img">
+                        <img src="static/Home/img-home/mtech.jpg" alt="">
+                    </a>
+                    <a href="" class="work__img">
+                        <img src="static/Home/img-home/llb-logo.jpg" alt="">
+                    </a>
+                    <a href="" class="work__img">
+                        <img src="static/Home/img-home/bca-logo.jpg" alt="">
+                    </a>
+                    <a href="" class="work__img">
+                        <img src="static/Home/img-home/mba-logo.webp" alt="">
+                    </a>
+                    <a href="" class="work__img">
+                        <img src="static/Home/img-home/agricukture-logo.webp" alt="">
+                    </a>
+                </div>
+            </section>
+
+            <!--===== CONTACT =====-->
+            <section class="contact section" id="contact">
+                <h2 class="section-title">Graphic Era University</h2>
+
+                <div class="contact__container bd-grid">
+                   <img class="skills__subtitle" src="static/Home/img-home/geu-building.jpg" alt="" height="500px" width="500px">
+                </div>
+            </section>
+        </main>
+
+        <!--===== FOOTER =====-->
+        <footer class="footer">
+            <p class="footer__title">GRAPHIC ERA UNIVERSITY</p>
+            <div class="footer__social">
+                <a href="https://twitter.com/i/flow/login?redirect_after_login=%2FGraphicEraUni" class="footer__icon"><i class='bx bxl-facebook' ></i></a>
+                <a href="https://www.instagram.com/geuofficial/" class="footer__icon"><i class='bx bxl-instagram' ></i></a>
+                <a href="https://www.facebook.com/geuofficial/" class="footer__icon"><i class='bx bxl-twitter' ></i></a>
+            </div>
+            <p class="footer__copy">&#169; Your Welcom in Geu,Dehrahun U.K.</p>
+        </footer>
+
+
+        <!--===== SCROLL REVEAL =====-->
+        <script src="https://unpkg.com/scrollreveal"></script>
+
+        <!--===== MAIN JS =====-->
+
+
+        <script >
+
+        // From Here Script Work is Started.
+
+
+
+        //------------------------------------------------------------------------------------------------------- 
+
+/*===== MENU SHOW =====*/ 
+const showMenu = (toggleId, navId) =>{
+    const toggle = document.getElementById(toggleId),
+    nav = document.getElementById(navId)
+
+    if(toggle && nav){
+        toggle.addEventListener('click', ()=>{
+            nav.classList.toggle('show')
+        })
+    }
+}
+showMenu('nav-toggle','nav-menu')
+
+/*==================== REMOVE MENU MOBILE ====================*/
+const navLink = document.querySelectorAll('.nav__link')
+
+function linkAction(){
+    const navMenu = document.getElementById('nav-menu')
+    // When we click on each nav__link, we remove the show-menu class
+    navMenu.classList.remove('show')
+}
+navLink.forEach(n => n.addEventListener('click', linkAction))
+
+/*==================== SCROLL SECTIONS ACTIVE LINK ====================*/
+const sections = document.querySelectorAll('section[id]')
+
+function scrollActive(){
+    const scrollY = window.pageYOffset
+
+    sections.forEach(current =>{
+        const sectionHeight = current.offsetHeight
+        const sectionTop = current.offsetTop - 50;
+        sectionId = current.getAttribute('id')
+
+        if(scrollY > sectionTop && scrollY <= sectionTop + sectionHeight){
+            document.querySelector('.nav__menu a[href*=' + sectionId + ']').classList.add('active')
+        }else{
+            document.querySelector('.nav__menu a[href*=' + sectionId + ']').classList.remove('active')
+        }
+    })
+}
+window.addEventListener('scroll', scrollActive)
+
+/*===== SCROLL REVEAL ANIMATION =====*/
+const sr = ScrollReveal({
+    origin: 'top',
+    distance: '60px',
+    duration: 2000,
+    delay: 200,
+//     reset: true
+});
+
+sr.reveal('.home__data, .about__img, .skills__subtitle, .skills__text',{}); 
+sr.reveal('.home__img, .about__subtitle, .about__text, .skills__img',{delay: 400}); 
+sr.reveal('.home__social-icon',{ interval: 200}); 
+sr.reveal('.skills__data, .work__img, .contact__input',{interval: 200}); 
+
+
+
+        //---------------------------------------------------------------------------------------------------------- 
+
+
+        </script>
+    </body>
+</html>
