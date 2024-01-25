@@ -84,10 +84,23 @@ WSGI_APPLICATION = 'GEHU_Book_Store.wsgi.application'
 # }
 
 DATABASES = {
-    'default':dj_database_url.parse(os.environ.get("DATABASE_URL"))
+    'default':dj_database_url.parse("postgres://bookstoredb_qqg3_user:4Xc7HwwX4bXXlfFD1RltA4mPDJbI8eSE@dpg-cmp7i58l5elc73fnf94g-a.oregon-postgres.render.com/bookstoredb_qqg3")
 }
+# DATABASES = {
+#     'default':dj_database_url.parse(os.environ.get("DATABASE_URL"))
+# }
 
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.postgresql_psycopg2',
+#         'NAME': 'django_user_mangement_tut',
+#         'USER': 'django_user_mangement_tut_user',
+#         'PASSWORD': '————-',
+#         'HOST': 'dpg-cl54g6al7jac73cc0bn0-a.singapore-postgres.render.com',
+#         'PORT': '5432',
 
+#     }
+# }
 # Password validation
 # https://docs.djangoproject.com/en/4.1/ref/settings/#auth-password-validators
 
