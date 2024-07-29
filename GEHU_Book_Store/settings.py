@@ -84,7 +84,7 @@ WSGI_APPLICATION = 'GEHU_Book_Store.wsgi.application'
 # }
 
 DATABASES = {
-    'default':dj_database_url.parse("postgres://bookstoredb_qqg3_user:4Xc7HwwX4bXXlfFD1RltA4mPDJbI8eSE@dpg-cmp7i58l5elc73fnf94g-a.oregon-postgres.render.com/bookstoredb_qqg3")
+    'default':dj_database_url.parse("postgresql://bookstore_m4pu_user:AW39OxOvABYnDEX6PnBxcWEyIzctcSNV@dpg-cqjndiggph6c739acrrg-a/bookstore_m4pu")
 }
 # DATABASES = {
 #     'default':dj_database_url.parse(os.environ.get("DATABASE_URL"))
